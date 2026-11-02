@@ -16,16 +16,10 @@ export class Login {
 
   iniciarSesion() {
     if (this.usuario === 'admin' && this.clave === 'admin') {
-    alert('Uusario y contraseña correctos');
+    this.router.navigate(['/libro']);
     } else {
       alert('Usuario o clave incorrectos');
     }
-  }
-
-  cerrarSesion() {
-    this.usuario = '';
-    this.clave = '';
-    this.router.navigate(['/login']);
   }
   
 }
