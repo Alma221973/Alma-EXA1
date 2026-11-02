@@ -1,9 +1,47 @@
+
 <main>
- <h1>Registro de libros</h1>
+  <h1>Registro de libros</h1>
 
   <button type="button" (click)="cerrarSesion()">
     Cerrar sesión
   </button>
+
+  <h2>Registrar libro</h2>
+
+  <form (ngSubmit)="guardar()">
+
+    <label for="titulo">Título</label>
+    <input
+      id="titulo"
+      type="text"
+      name="titulo"
+      [(ngModel)]="titulo"
+      required>
+
+    <label for="autor">Autor</label>
+    <input
+      id="autor"
+      type="text"
+      name="autor"
+      [(ngModel)]="autor"
+      required>
+
+    <label for="id">ID</label>
+    <input
+      id="id"
+      type="number"
+      name="id"
+      [(ngModel)]="id"
+      min="0"
+      step="1"
+      required>
+
+    <button type="submit">Guardar</button>
+
+    <button type="button" (click)="limpiar()">
+      Limpiar
+    </button>
+  </form>
 
   <h2>Listado de libros</h2>
 
@@ -30,5 +68,5 @@
         }
       </tbody>
     </table>
-    }
+  }
 </main>
